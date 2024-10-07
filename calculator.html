@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap-5.3.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="calculator.css">
+    <title>Catculator</title>
+</head>
+
+<body onkeydown="keyPress(event)">
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center mt-5 w-100">
+                    <div class="calculator w-100 ">
+
+                        <input type="text" class="output" id="output" disabled>
+                        <input type="text" class="calculator-screen text-light" id="display" value="" disabled />
+
+                        <div class="calculator-keys border border-black">
+
+                            <!-- First Row -->
+                            <button type="button" class="operator btn btn-info" value="("
+                                onclick="appendToDisplay('\(')">(</button>
+                            <button type="button" class="operator btn btn-info" value=")"
+                                onclick="appendToDisplay(')')">)</button>
+                            <button type="button" class="operator btn btn-info" value="-"
+                                onclick="appendToDisplay('%')">%</button>
+                            <button type="button" class="all-clear function btn btn-danger btn-sm" value="all-clear"
+                                onclick="clearOutput(); clearDisplay();">AC</button>
+
+                            <!-- Second Row -->
+                            <button type="button" value="7" class="btn btn-light"
+                                onclick="appendToDisplay('7')">7</button>
+                            <button type="button" value="8" class="btn btn-light"
+                                onclick="appendToDisplay('8')">8</button>
+                            <button type="button" value="9" class="btn btn-light"
+                                onclick="appendToDisplay('9')">9</button>
+                            <button type="button" class="operator btn btn-info" value="/"
+                                onclick="appendToDisplay('/')">&divide;</button>
+
+                            <!-- Third Row -->
+                            <button type="button" value="4" class="btn btn-light"
+                                onclick="appendToDisplay('4')">4</button>
+                            <button type="button" value="5" class="btn btn-light"
+                                onclick="appendToDisplay('5')">5</button>
+                            <button type="button" value="6" class="btn btn-light"
+                                onclick="appendToDisplay('6')">6</button>
+                            <button type="button" class="operator btn btn-info" value="x"
+                                onclick="appendToDisplay('*')">&times;</button>
+
+                            <!-- Fourth Row -->
+                            <button type="button" value="1" class="btn btn-light"
+                                onclick="appendToDisplay('1')">1</button>
+                            <button type="button" value="2" class="btn btn-light"
+                                onclick="appendToDisplay('2')">2</button>
+                            <button type="button" value="3" class="btn btn-light"
+                                onclick="appendToDisplay('3')">3</button>
+                            <button type="button" class="operator btn btn-info" value="-"
+                                onclick="appendToDisplay('-')">-</button>
+
+                            <!-- Fifth Row-->
+                            <button type="button" class="backspace function btn btn-danger btn-sm" value="backspace"
+                                onclick="backspace()">DEL</button>
+                            <button type="button" value="0" class="btn btn-light"
+                                onclick="appendToDisplay('0')">0</button>
+                            <button type="button" class="btn btn-secondary" value="."
+                                onclick="appendToDisplay('.')">.</button>
+                            <button type="button" class="operator btn btn-info" value="+"
+                                onclick="appendToDisplay('+')">+</button>
+
+                            <!-- Sixth Row -->
+                            <button type="button" class="equal-sign operator btn btn-default bg-light" value="="
+                                onclick="calculate()">=</button>
+                            <button type="button" class="operator btn btn-info" value="-"
+                                onclick="appendToDisplay('**')">^</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col d-flex justify-content-end my-auto text-center welcome-text mt-5">
+                <h1 class="text-center text-light">Welcome, <br> Hoomans, <br> To Catculator</h1>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="calculator.js"></script>
+</body>
+
+</html>
